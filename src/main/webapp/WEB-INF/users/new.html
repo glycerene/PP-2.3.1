@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Title</title>
+</head>
+<body>
+<p th:text="${title}"></p>
+<br>
+<form th:method="POST" th:action="@{/users}" th:object="${user}">
+    <label for="name">Имя</label>
+    <input th:charset="utf-8" type="text" id="name" th:field="*{name}" th:value="${user.getName()}"/>
+    <br>
+    <label for="surname">Фамилия</label>
+    <input th:charset="utf-8" type="text" id="surname" th:field="*{surname}" th:value="${user.getSurname()}"/>
+    <br>
+    <label for="age">Возраст</label>
+    <input th:charset="utf-8" type="number" id="age" th:field="*{age}" th:value="${user.getAge()}"/>
+    <br>
+    <label for="email">email</label>
+    <input th:charset="utf-8" type="text" id="email" th:field="*{email}" th:value="${user.getEmail()}"/>
+    <br>
+    <input type="submit" value="OK" onClick="window.location.href='users/index'"/>
+
+</form>
+</body>
+</html>
